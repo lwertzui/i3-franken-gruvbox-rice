@@ -238,35 +238,35 @@ def notify_about_version(latest_version: float):
         print("something went wrong in notify-send.")
 
 
-def notify_version():
-    if NO_VERSION_NOTIFY:
-        return
-    try:
-        our_location = os.path.dirname(os.path.abspath(__file__))
-
-        url = "https://raw.githubusercontent.com/deter0/xborder/main/version.txt"  # Maybe hardcoding it is a bad idea
-        request = requests.get(url, allow_redirects=True)
-        latest_version_string = request.content.decode("utf-8")
-
-        latest_version = float(latest_version_string)
-
-        if os.path.isfile(our_location + "/.update_ignore.txt"):
-            ignore_version_file = open(our_location + "/.update_ignore.txt", "r")
-            ignored_version_string = ignore_version_file.read()
-            ignored_version = float(ignored_version_string)
-            if ignored_version == latest_version:
-                return
-
-        if VERSION < latest_version:
-            threading._start_new_thread(notify_about_version, (latest_version))
-    except:
-        subprocess.Popen(["notify-send", "--app-name=xborders", "ERROR: xborders couldn't get latest version!"])
+#def notify_version():
+#    if NO_VERSION_NOTIFY:
+#        return
+#    try:
+#        our_location = os.path.dirname(os.path.abspath(__file__))
+#
+#        url = "https://raw.githubusercontent.com/deter0/xborder/main/version.txt"  # Maybe hardcoding it is a bad idea ##yes, yes it is
+#        request = requests.get(url, allow_redirects=True)
+#        latest_version_string = request.content.decode("utf-8")
+#
+#        latest_version = float(latest_version_string)
+#
+#        if os.path.isfile(our_location + "/.update_ignore.txt"):
+#            ignore_version_file = open(our_location + "/.update_ignore.txt", "r")
+#            ignored_version_string = ignore_version_file.read()
+#            ignored_version = float(ignored_version_string)
+#            if ignored_version == latest_version:
+#                return
+#
+#        if VERSION < latest_version:
+#            threading._start_new_thread(notify_about_version, (latest_version))
+#    except:
+#        subprocess.Popen(["notify-send", "--app-name=xborders", "ERROR: xborders couldn't get latest version!"])
 
 
 class Highlight(Gtk.Window):
     def __init__(self, screen_width, screen_height):
         super().__init__(type=Gtk.WindowType.POPUP)
-        notify_version()
+#        notify_version()
 
         self.wnck_screen = Wnck.Screen.get_default()
 

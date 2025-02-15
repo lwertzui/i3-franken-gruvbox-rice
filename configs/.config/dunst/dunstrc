@@ -1,0 +1,25 @@
+[global]
+frame_color = "#d5c4a1"
+separator_color = "#d5c4a1"
+font = "monospace 12"  # Adjust the font size here
+corner_radius = 10     # Adjust the corner radius here
+
+[base16_low]
+    msg_urgency = "low"
+    background = "#3c3836"
+    foreground = "#d5c4a1"
+
+[base16_normal]
+    msg_urgency = "normal"
+    background = "#504945"
+    foreground = "#ebdbb2"
+
+[base16_critical]
+    msg_urgency = "critical"
+    background = "#fb4934"
+    foreground = "#d56d0e"
+
+[rules]
+# Ignore notifications from xborders
+appname = "xborders" 
+ignore = true

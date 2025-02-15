@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Function to copy file and create directory if necessary
 copy_file() {
     local src=$1
@@ -19,26 +18,14 @@ copy_file() {
 }
 
 # Get the absolute path of the script directory
-SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+SRC_DIR=$(cd "$(dirname "$0")" && pwd)
 echo "Script directory: $SCRIPT_DIR"
-
-# Define the source directory directly as a sibling of the script directory
-SRC_DIR="$SCRIPT_DIR/configs"
-echo "Source directory: $SRC_DIR"
 
 # Define the destination directory in the user's home directory
 DEST_DIR="$HOME/.config"
 echo "Destination directory: $DEST_DIR"
 
 # Copy the configuration files
-copy_file "$SRC_DIR/i3/config" "$DEST_DIR/i3/config"
-copy_file "$SRC_DIR/terminator/config" "$DEST_DIR/terminator/config"
-copy_file "$SRC_DIR/polybar/config.ini" "$DEST_DIR/polybar/config.ini"
-copy_file "$SRC_DIR/picom/picom.conf" "$DEST_DIR/picom/picom.conf"
-copy_file "$SRC_DIR/rofi/config.rasi" "$DEST_DIR/rofi/config.rasi"
-copy_file "$SRC_DIR/xborders/config.json" "$DEST_DIR/xborder/config.json"
-copy_file "$SRC_DIR/dunst/dunstrc" "$DEST_DIR/dunst/dunstrc"
-copy_file "$SRC_DIR/starship/starship.toml" "$DEST_DIR/starship/starship.toml"
-copy_file "$SRC_DIR/bash/bashrc" "$DEST_DIR/../.bashrc"
-copy_file "$SCRIPT_DIR/wallpapers/wallpaper.png" "$DEST_DIR/wallpapers/wallpaper.png"
+copy_file "$SRC_DIR/configs/.config/*" "$DEST_DIR/"
+copy_file "$SRC_DIR/wallpapers/wallpaper.png" "$DEST_DIR/wallpapers/wallpaper.png"
 

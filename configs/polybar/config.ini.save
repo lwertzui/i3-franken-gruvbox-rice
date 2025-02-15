@@ -157,32 +157,22 @@ label = %percentage:2%%
 inherit = module/battery
 battery = BAT0
 
-label-charging = %{F#d65d0e}P: C %percentage%%%{F-}
-label-discharging = %{F#ffffff}P: D %percentage%%%{F-}
-label-full = %{F#ffffff}P: Fully Charged %{F-}
-label-low = %{F#cc241d}P: D %percentage%%%{F-}
-
 [module/bat1]
 inherit = module/battery
 battery = BAT1
 
-label-charging = %{F#d65d0e}U: C %percentage%%%{F-}
-label-discharging = %{F#ffffff}U: D %percentage%%%{F-}
-label-full = %{F#ffffff}U: Fully Charged %{F-}
-label-low = %{F#cc241d}U: D %percentage%%%{F-}
-label-empty = %{F#ffffff}U: N/A %{F-} ; Display when battery is missing
-
 [module/battery]
 type = internal/battery
 full-at = 98
+
 adapter = AC
+
 poll-interval = 5
 time-format = %H:%M
 
 format-charging = <label-charging>
 format-discharging = <label-discharging>
 format-full = <label-full>
-format-empty = <label-empty>
 
 [network-base]
 type = internal/network
