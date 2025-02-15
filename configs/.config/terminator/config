@@ -1,6 +1,7 @@
 [global_config]
 [keybindings]
-  help = F10
+  full_screen = ""
+  help = ""
 [profiles]
   [[default]]
     icon_bell = False
