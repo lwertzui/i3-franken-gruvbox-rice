@@ -27,7 +27,7 @@ mkdir -p "$CONFIG_DIR/configs/.config/rofi/"
 rsync -a "$HOME/.config/rofi/" "$CONFIG_DIR/configs/.config/rofi/"
 echo "--> done"
 
-echo "copying xborder config"
+echo "copying xborders config"
 mkdir -p "$CONFIG_DIR/configs/.config/xborders/"
 rsync -a "$HOME/.config/xborder/" "$CONFIG_DIR/configs/.config/xborders/"
 echo "--> done"
