@@ -1,48 +1,52 @@
 #!/bin/bash
 
 CONFIG_DIR="$HOME/i3-franken-gruvbox-rice"
-
+echo "copying files from $CONFIG_DIR"
+echo ""
 echo "copying i3 config"
 mkdir -p "$CONFIG_DIR/configs/.config/i3/"
 rsync -a "$HOME/.config/i3/" "$CONFIG_DIR/configs/.config/i3/"
 echo "--> done"
-
+echo ""
 echo "copying terminator config"
 mkdir -p "$CONFIG_DIR/configs/.config/terminator/"
 rsync -a "$HOME/.config/terminator/" "$CONFIG_DIR/configs/.config/terminator/"
 echo "--> done"
-
+echo ""
 echo "copying polybar config"
 mkdir -p "$CONFIG_DIR/configs/.config/polybar/"
 rsync -a "$HOME/.config/polybar/" "$CONFIG_DIR/configs/.config/polybar/"
 echo "--> done"
-
+echo ""
 echo "copying picom config"
 mkdir -p "$CONFIG_DIR/configs/.config/picom/"
 rsync -a "$HOME/.config/picom/" "$CONFIG_DIR/configs/.config/picom/"
 echo "--> done"
-
+echo ""
 echo "copying rofi config"
 mkdir -p "$CONFIG_DIR/configs/.config/rofi/"
 rsync -a "$HOME/.config/rofi/" "$CONFIG_DIR/configs/.config/rofi/"
 echo "--> done"
-
+echo ""
 echo "copying xborders config"
 mkdir -p "$CONFIG_DIR/configs/.config/xborders/"
 rsync -a "$HOME/.config/xborder/" "$CONFIG_DIR/configs/.config/xborders/"
 echo "--> done"
-
+echo ""
 echo "copying dunst config"
 mkdir -p "$CONFIG_DIR/configs/.config/dunst/"
 rsync -a "$HOME/.config/dunst/" "$CONFIG_DIR/configs/.config/dunst/"
 echo "--> done"
-
+echo ""
 echo "copying starship config"
 mkdir -p "$CONFIG_DIR/configs/.config/starship/"
 rsync -a "$HOME/.config/starship/" "$CONFIG_DIR/configs/.config/starship/"
 echo "--> done"
-
+echo ""
 echo "copying bashrc"
 mkdir -p "$CONFIG_DIR/configs/.config/bashrc/"
 rsync -a "$HOME/.bashrc" "$CONFIG_DIR/configs/.config/bashrc/"
 echo "--> done"
+echo ""
+echo "copied files to $CONFIG_DIR/configs/.config/i3/"
+

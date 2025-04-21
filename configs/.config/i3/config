@@ -25,7 +25,7 @@ exec --no-startup-id dex --autostart --environment i3
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3 lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.local/bin/lock --nofork
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
@@ -230,7 +230,7 @@ client.focused_inactive $bgcolor       $in-bgcolor     $in-text        $in-bgcol
 client.urgent           $bgcolor       $u-bgcolor      $text           $u-bgcolor
 
 # Shortcut for Lockscreen
-bindsym $mod+x exec i3lock
+bindsym $mod+x exec ~/.local/bin/lock
 
 # Key bindings Fn keys
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -259,17 +259,16 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 #Picom toggle
 exec $mod+G ~/config/scripts/toggle_picom.sh
 
-##autostart applications
-exec_always --no-startup-id spotify
-exec --no-startup-id pavucontrol
-exec_always --no-startup-id /bin/Repetier-Server\ Monitor-1.4.7.AppImage
-
-#exec_always --no-startup-id
-
 #polybar
 exec --no-startup-id polybar
 
 #webcam 
 bindsym XF8WebCam exec /bin/kamoso
 
-#bindsym XF86Calculator exec /bin/kamoso
+##autostart applications
+exec_always --no-startup-id spotify
+exec --no-startup-id pavucontrol
+exec_always --no-startup-id /bin/Repetier-Server\ Monitor-1.4.7.AppImage
+#exec_always --no-startup-id
+
+
